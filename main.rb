@@ -1,4 +1,4 @@
-require_relative './services/isbn_calculator'
+require_relative './service/isbn_calculator'
 
 puts "Enter ISBN Number"
 number = gets.chomp!
