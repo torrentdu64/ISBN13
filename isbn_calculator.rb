@@ -1,4 +1,4 @@
-class ISBNCalculator
+class ISBNCalculator < Services::Object
   attr_reader :isbn
 
   def initialize(isbn)
@@ -34,23 +34,19 @@ class ISBNCalculator
     adjustment == 10 ? 0 : adjustment
   end
 
+  def calculate
+    puts "Final result for ISBN #{@isbn}: #{adjust_checksum}"
+  end
+
   # Shortcut to get the final result
   def call
-    adjust_checksum
+    calculate
   end
 end
 
-# Example usage with lambda:
+# Example usage ISBNCalculator:
 isbn = "9780143007234"
-calculator = ISBNCalculator.new(isbn)
+calculator = ISBNCalculator.call(isbn)
 
-# Using the call method directly
-final_result = calculator.call
-puts "Final result for ISBN #{isbn}: #{final_result}"
 
-# Using a lambda to call the calculator
-isbn_lambda = ->(isbn) { ISBNCalculator.new(isbn).call }
 
-# Using the lambda
-final_result_from_lambda = isbn_lambda.call("9780143007234")
-puts "Final result from lambda: #{final_result_from_lambda}"
