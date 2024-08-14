@@ -1,4 +1,4 @@
-module Services
+module Service
   class Object
     class << self
       def call(*arg)
