@@ -1,3 +1,5 @@
+require_relative './object'
+
 module Service
   class ISBNCalculator < Service::Object
     attr_reader :isbn
