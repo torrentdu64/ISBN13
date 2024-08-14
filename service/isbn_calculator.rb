@@ -1,5 +1,5 @@
 module Service
-  class ISBNCalculator < Services::Object
+  class ISBNCalculator < Service::Object
     attr_reader :isbn
   
     def initialize(isbn)
@@ -49,5 +49,5 @@ module Service
 end
 
 # Example usage ISBNCalculator:
-isbn = "9780143007234"
-calculator = ISBNCalculator.call(isbn)
+# isbn = "9780143007234"
+# calculator = ISBNCalculator.call(isbn)
