@@ -34,10 +34,6 @@ calculator = Service::ISBNCalculator.call(isbn)
 # initialize(isbn)
 Parameters:
 isbn (String): The ISBN-13 number to calculate the checksum for.
-DescriptioMethods
-# initialize(isbn)
-Parameters:
-isbn (String): The ISBN-13 number to calculate the checksum for.
 Description: Initializes a new instance of the ISBNCalculator class.
 # `call`
 Description: Shortcut method that triggers the checksum calculation process and outputs the final result.
