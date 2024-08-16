@@ -13,7 +13,40 @@ To use the `ISBNCalculator`, you first need to create an instance of the class b
 ```ruby
 isbn = "9780143007234"
 calculator = Service::ISBNCalculator.new(isbn)
+```
 
 ### Step 2: Call the call Method
 
 Once the instance is created, you can calculate the checksum by calling the call method on the instance. This method internally invokes the necessary steps to calculate the final result.
+
+```ruby
+Service::ISBNCalculator.call("9780143007234")
+```
+
+### Full Example
+
+```ruby
+isbn = "9780143007234"
+calculator = Service::ISBNCalculator.call(isbn)
+```
+
+## Methods
+# initialize(isbn)
+Parameters:
+isbn (String): The ISBN-13 number to calculate the checksum for.
+DescriptioMethods
+# initialize(isbn)
+Parameters:
+isbn (String): The ISBN-13 number to calculate the checksum for.
+Description: Initializes a new instance of the ISBNCalculator class.
+# `call`
+Description: Shortcut method that triggers the checksum calculation process and outputs the final result.
+Private Methods
+# `apply_alternating_multiplier`: Applies an alternating multiplier of 1 and 3 to each digit of the ISBN.
+# `sum_multiplied_digits`: Sums the digits after they have been multiplied.
+# `calculate_checksum_modulus`: Calculates the modulus of the sum of the digits.
+# `adjust_checksum`: Adjusts the checksum by subtracting it from 10, with a special case for when the result is 10.
+Notes
+The ISBN must be provided as a string of 13 digits.
+The `call` method will print the final checksum directly.n: Initializes a new instance of the ISBNCalculator class.
+The `call` method will print the final checksum directly. 
