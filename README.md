@@ -13,3 +13,7 @@ To use the `ISBNCalculator`, you first need to create an instance of the class b
 ```ruby
 isbn = "9780143007234"
 calculator = Service::ISBNCalculator.new(isbn)
+
+### Step 2: Call the call Method
+
+Once the instance is created, you can calculate the checksum by calling the call method on the instance. This method internally invokes the necessary steps to calculate the final result.
