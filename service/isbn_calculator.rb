@@ -1,8 +1,15 @@
-require_relative './object'
+require_relative './box'
+
+
 
 module Service
-  class ISBNCalculator < Service::Object
+  class ISBNCalculator < Service::Box
     attr_reader :isbn
+
+    validates :isbn, presence: true,  message: "Value must be enter"
+    validates :isbn, format: /^\d+$/, message: "Invalid code enter must contain digit"
+    validates :isbn, length: 12, message: "Code must be 12 value"
+
   
     def initialize(isbn)
       @isbn = isbn
@@ -44,9 +51,12 @@ module Service
     end
   
     def calculate
-      puts "Final result for ISBN #{@isbn}: #{adjust_checksum}"
+      if success?
+        puts "Final result for ISBN #{@isbn}: #{adjust_checksum}"
+      else
+        puts errors[:validation].join(', ')
+      end
     end
-    
   end
 end
 

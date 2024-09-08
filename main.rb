@@ -5,4 +5,5 @@ number = gets.chomp!
 
 data = Service::ISBNCalculator.call(number)
 
-puts data.result
+
+
