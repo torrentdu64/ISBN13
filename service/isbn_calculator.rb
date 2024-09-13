@@ -8,7 +8,7 @@ module Service
 
     validates :isbn, presence: true,  message: "Value must be enter"
     validates :isbn, format: /^\d+$/, message: "Invalid code enter must contain digit"
-    validates :isbn, length: 12, message: "Code must be 12 value"
+    validates :isbn, length: 13, message: "Code must be 13 value"
 
   
     def initialize(isbn)

@@ -14,14 +14,14 @@ module Service
             end
 
             def validate
-                errors.add(:validation, message) if falsy     
+                errors.add(:validation, message) if falsy 
             end 
 
             def falsy
                 if instruction
-                    value.nil? && value.strip.empty?
+                    value.nil? || value.strip.empty?
                 else
-                    true
+                    false
                 end
             end
         end  
